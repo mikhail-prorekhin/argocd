@@ -9,5 +9,3 @@ module "argocd" {
   chart_version    = "5.46.2"
 }
 ```
-
-Copyleft (c) by Denis Astahov.# argocd
