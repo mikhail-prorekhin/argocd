@@ -3,4 +3,4 @@
 container:
   image: prorekhin/k8s_pmv_test_1:version1
 
-replicaCount: 4
+replicaCount: 2
