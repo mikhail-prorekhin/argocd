@@ -1,0 +1,6 @@
+# Prod Override Values for my Helm Chart
+
+container:
+  image: prorekhin/k8s_pmv_test_1:version2
+
+replicaCount: 4

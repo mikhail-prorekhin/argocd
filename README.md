@@ -1,11 +1,33 @@
-# Module to deploy Higly Availabe ArgoCD via HelmChart to EKS
+## ArgoCD Applications per EKS Cluster
 
-Example to use:
+Name of the folder represent name of the EKS Cluster (Except HelmCharts).
 
 ```
-module "argocd" {
-  source           = "./terraform_argocd_eks"
-  eks_cluster_name = "demo-dev"
-  chart_version    = "5.46.2"
-}
+│
+├── HelmCharts             # All Helm Charts
+│   ├── ChartTest1
+│   │   ├── Chart.yaml
+│   │   ├── templates
+│   │   ├── values_dev.yaml    # DEV Values
+│   │   ├── values_prod.yaml   # PROD Values
+│   │   └── values.yaml        # Default Values
+│   └── ChartTest2
+│       ├── Chart.yaml
+│       ├── templates
+│       ├── values_dev.yaml    # DEV Values
+│       ├── values_prod.yaml   # PROD Values
+│       └── values.yaml        # Default Values
+│   
+├── demo-dev                   # EKS Cluster name
+│   ├── applications
+│   │   ├── app1.yaml
+│   │   └── app2.yaml
+│   └── root.yaml              # Root ArgoCD Application
+└── demo-prod                  # EKS Cluster name
+    ├── applications
+    │   ├── app1.yaml
+    │   └── app2.yaml
+    └── root.yaml              # Root ArgoCD Application    
 ```
+
+Copyleft (c) by Denis Astahov.
